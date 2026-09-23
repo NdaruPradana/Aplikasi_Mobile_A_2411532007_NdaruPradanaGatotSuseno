@@ -21,37 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// 2. HALAMAN UTAMA (Scaffold)
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Praktikum 2: Layouting'),
-        backgroundColor: Colors.blue,
-      ),
-      body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GreetingWidget(),
-              SizedBox(height: 20),
-              BalanceCardWidget(),
-              SizedBox(height: 20),
-              ActionButtonsWidget(),
-              SizedBox(height: 20),
-              RecentTransactionsWidget(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 // 3. STATELESS WIDGET (Sapaan)
 class GreetingWidget extends StatelessWidget {
@@ -59,7 +29,7 @@ class GreetingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return const collum(
       children: [
         CircleAvatar(
           radius: 24,
@@ -67,7 +37,8 @@ class GreetingWidget extends StatelessWidget {
           child: Icon(Icons.person, size: 30, color: Colors.white),
         ),
         SizedBox(width: 12),
-        Column(
+        row(
+         
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -204,7 +175,7 @@ class RecentTransactionsWidget extends StatelessWidget {
           ),
           child: const Column(
             children: [
-              // Item Transaksi 1 (Pengeluaran - Merah)
+              // Item Transaksi 1 (Pengeluaran)
               ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.redAccent,
@@ -214,15 +185,12 @@ class RecentTransactionsWidget extends StatelessWidget {
                 subtitle: Text('13 Sep 2026'),
                 trailing: Text(
                   '- Rp 50.000',
-                  style: TextStyle(
-                    color: Colors.red, // Tugas 1: Warna merah untuk pengeluaran
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
                 ),
               ),
               Divider(height: 1),
 
-              // Item Transaksi 2 (Pemasukan - Hijau)
+              // Item Transaksi 2 (Pemasukan)
               ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.green,
@@ -232,15 +200,12 @@ class RecentTransactionsWidget extends StatelessWidget {
                 subtitle: Text('01 Sep 2026'),
                 trailing: Text(
                   '+ Rp 5.000.000',
-                  style: TextStyle(
-                    color: Colors.green, // Tugas 1: Warna hijau untuk pemasukan
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
                 ),
               ),
               Divider(height: 1),
 
-              // Item Transaksi 3 (Pengeluaran - Merah)
+              // Item Transaksi 3 (Pengeluaran)
               ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.blueAccent,
@@ -250,17 +215,12 @@ class RecentTransactionsWidget extends StatelessWidget {
                 subtitle: Text('10 Sep 2026'),
                 trailing: Text(
                   '- Rp 150.000',
-                  style: TextStyle(
-                    color: Colors.red, // Tugas 1: Warna merah untuk pengeluaran
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
                 ),
               ),
               Divider(height: 1),
 
-              // --- TUGAS 2: TAMBAHAN 2 TRANSAKSI FIKTIF ---
-
-              // Item Transaksi 4 (Pengeluaran Fiktif - Merah)
+              // Item Transaksi 4 (Tugas 2: Tambah Data Fiktif 1)
               ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.purple,
@@ -270,15 +230,12 @@ class RecentTransactionsWidget extends StatelessWidget {
                 subtitle: Text('08 Sep 2026'),
                 trailing: Text(
                   '- Rp 350.000',
-                  style: TextStyle(
-                    color: Colors.red, // Pengeluaran
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
                 ),
               ),
               Divider(height: 1),
 
-              // Item Transaksi 5 (Pemasukan Fiktif - Hijau)
+              // Item Transaksi 5 (Tugas 2: Tambah Data Fiktif 2)
               ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.orange,
@@ -288,10 +245,7 @@ class RecentTransactionsWidget extends StatelessWidget {
                 subtitle: Text('05 Sep 2026'),
                 trailing: Text(
                   '+ Rp 1.500.000',
-                  style: TextStyle(
-                    color: Colors.green, // Pemasukan
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
